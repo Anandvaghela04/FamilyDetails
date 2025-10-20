@@ -142,12 +142,12 @@
     return (
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-2xl font-bold text-center mb-6" style={{ fontFamily: 'Noto Sans Gujarati, sans-serif' }}>
-          કુટુંબ વિગતો ફોર્મ
+          વાઘેલા પરિવારના કુંટુંબની વિગતોનું ફોર્મ
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Family head fields */}
           <div>
-            <label className="block font-medium mb-1">કુટુંબના વડાનું નામ:</label>
+            <label className="block font-medium mb-1">કુંટુંબના વડાનું નામ:</label>
             <input type="text" name="headName" required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
           <div>
@@ -194,10 +194,10 @@
           {maritalStatus === 'married' && (
             <>
               <div className="bg-blue-50 p-4 rounded-md">
-                <h3 className="text-lg font-bold mb-3">કુટુંબના વડાના પત્ની ની વિગતો</h3>
+                <h3 className="text-lg font-bold mb-3">કુંટુંબના વડાના પત્નીની વિગતો</h3>
                 <div className="space-y-3">
                   <input type="text" name="wifeName" placeholder="નામ" className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-                  <input type="date" name="wifeDOB" className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+                  <input type="date" name="wifeDOB" placeholder="જન્મ તારીખ" className="w-full px-3 py-2 border border-gray-300 rounded-md" />
                   <input type="text" name="wifeEducation" placeholder="અભ્યાસ" className="w-full px-3 py-2 border border-gray-300 rounded-md" />
                   <input type="text" name="wifeOccupation" placeholder="વ્યવસાય" className="w-full px-3 py-2 border border-gray-300 rounded-md" />
                 </div>
@@ -222,7 +222,7 @@
                 <div key={childIndex} className="bg-gray-50 p-4 rounded-md space-y-3">
                   <h4 className="font-bold">સંતાન {childIndex + 1}</h4>
                   <input type="text" placeholder="નામ" value={child.name} onChange={(e) => updateChild(childIndex, 'name', e.target.value)} required className="w-full px-3 py-2 border rounded-md" />
-                  <input type="date" value={child.dob} onChange={(e) => updateChild(childIndex, 'dob', e.target.value)} className="w-full px-3 py-2 border rounded-md" />
+                  <input type="date" placeholder="જન્મ તારીખ" value={child.dob} onChange={(e) => updateChild(childIndex, 'dob', e.target.value)} className="w-full px-3 py-2 border rounded-md" />
                   <input type="text" placeholder="સરનામું" value={child.address} onChange={(e) => updateChild(childIndex, 'address', e.target.value)} className="w-full px-3 py-2 border rounded-md" />
                   <input type="text" placeholder="મોબાઈલ નંબર" value={child.mobile} onChange={(e) => updateChild(childIndex, 'mobile', e.target.value)} className="w-full px-3 py-2 border rounded-md" />
                   <input type="text" placeholder="અભ્યાસ" value={child.education} onChange={(e) => updateChild(childIndex, 'education', e.target.value)} className="w-full px-3 py-2 border rounded-md" />
@@ -246,7 +246,7 @@
                         <div className="bg-white p-3 rounded-md space-y-2">
                           <p className="font-medium text-sm">પુત્રવધુ ની વિગતો:</p>
                           <input type="text" placeholder="પુત્રવધુનું નામ" value={child.spouse_details?.name || ''} onChange={(e) => updateChild(childIndex, 'spouse_name', e.target.value)} className="w-full px-3 py-2 border rounded-md text-sm" />
-                          <input type="date" value={child.spouse_details?.dob || ''} onChange={(e) => updateChild(childIndex, 'spouse_dob', e.target.value)} className="w-full px-3 py-2 border rounded-md text-sm" />
+                          <input type="date" placeholder="જન્મ તારીખ" value={child.spouse_details?.dob || ''} onChange={(e) => updateChild(childIndex, 'spouse_dob', e.target.value)} className="w-full px-3 py-2 border rounded-md text-sm" />
                           <input type="text" placeholder="અભ્યાસ" value={child.spouse_details?.education || ''} onChange={(e) => updateChild(childIndex, 'spouse_education', e.target.value)} className="w-full px-3 py-2 border rounded-md text-sm" />
                           <input type="text" placeholder="વ્યવસાય" value={child.spouse_details?.occupation || ''} onChange={(e) => updateChild(childIndex, 'spouse_occupation', e.target.value)} className="w-full px-3 py-2 border rounded-md text-sm" />
 
@@ -273,7 +273,7 @@
                             {child.children?.map((grandchild, gIndex) => (
                               <div key={gIndex} className="bg-gray-50 p-2 mb-2 rounded border border-gray-200 space-y-1">
                                 <input type="text" placeholder="નામ" value={grandchild.name} onChange={(e) => updateGrandchild(childIndex, gIndex, 'name', e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
-                                <input type="date" value={grandchild.dob} onChange={(e) => updateGrandchild(childIndex, gIndex, 'dob', e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
+                                <input type="date" placeholder="જન્મ તારીખ" value={grandchild.dob} onChange={(e) => updateGrandchild(childIndex, gIndex, 'dob', e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
                                 <input type="text" placeholder="અભ્યાસ" value={grandchild.education} onChange={(e) => updateGrandchild(childIndex, gIndex, 'education', e.target.value)} className="w-full px-2 py-1 border rounded text-sm" />
                                 <select value={grandchild.relation} onChange={(e) => updateGrandchild(childIndex, gIndex, 'relation', e.target.value)} className="w-full px-2 py-1 border rounded text-sm">
                                   <option value="પૌત્ર">પૌત્ર</option>

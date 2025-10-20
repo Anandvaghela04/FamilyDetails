@@ -52,7 +52,7 @@ export default function FamilyCard({
         >
           <div className="border-4 border-blue-600 rounded-lg p-6">
             <h1 className="text-3xl font-bold text-center mb-6 text-blue-800">
-              કુટુંબ વિગતો કાર્ડ
+              વાઘેલા પરિવારના કુંટુંબની વિગતોનું કાર્ડ
             </h1>
 
             {/* Head Details */}
@@ -67,7 +67,7 @@ export default function FamilyCard({
                 )}
                 <div>
                   <h2 className="text-xl font-bold">{record.head_name}</h2>
-                  <p>જન્મ: {record.head_dob}</p>
+                  <p>જન્મ તા.: {record.head_dob}</p>
                   <p>સરનામું: {record.address}</p>
                   <p>મોબાઈલ: {record.mobile}</p>
                   <p>અભ્યાસ: {record.education}</p>
@@ -78,9 +78,9 @@ export default function FamilyCard({
 
               {record.wife_details && Object.keys(record.wife_details).length > 0 && (
                 <div className="mt-4 bg-blue-100 p-3 rounded-md">
-                  <h3 className="font-bold mb-1">કુટુંબના વડાની પત્ની ની વિગતો:</h3>
+                  <h3 className="font-bold mb-1">કુંટુંબના વડાની પત્નીની વિગતો:</h3>
                   <p>નામ: {record.wife_details.name || '—'}</p>
-                  <p>જન્મ: {record.wife_details.dob || '—'}</p>
+                  <p>જન્મ તા.: {record.wife_details.dob || '—'}</p>
                   <p>અભ્યાસ: {record.wife_details.education || '—'}</p>
                   <p>વ્યવસાય: {record.wife_details.occupation || '—'}</p>
                 </div>
@@ -100,7 +100,7 @@ export default function FamilyCard({
                     <h3 className="text-lg font-semibold text-blue-800 mb-2">
                       {child.relation || `સંતાન ${i + 1}`}: {child.name}
                     </h3>
-                    <p>જન્મ: {child.dob || '—'}</p>
+                    <p>જન્મ તા.: {child.dob || '—'}</p>
                     <p>સરનામું: {child.address || '—'}</p>
                     <p>મોબાઈલ: {child.mobile || '—'}</p>
                     <p>અભ્યાસ: {child.education || '—'}</p>
@@ -121,7 +121,7 @@ export default function FamilyCard({
                             '—'}
                         </p>
                         <p>
-                          જન્મ:{' '}
+                          જન્મ તા.:{' '}
                           {child.spouse_details?.dob ||
                             child.wife?.dob ||
                             child.wife_details?.dob ||
@@ -159,7 +159,7 @@ export default function FamilyCard({
                               <strong>{grand.relation || 'સંતાન'}:</strong>{' '}
                               {grand.name}
                             </p>
-                            <p>જન્મ: {grand.dob || '—'}</p>
+                            <p>જન્મ તા.: {grand.dob || '—'}</p>
                             <p>અભ્યાસ: {grand.education || '—'}</p>
                           </div>
                         ))}

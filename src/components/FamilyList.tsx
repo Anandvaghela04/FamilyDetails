@@ -42,7 +42,7 @@ export default function FamilyList({ onGenerateCard }: { onGenerateCard: (record
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center" style={{ fontFamily: 'Noto Sans Gujarati, sans-serif' }}>
-        કુટુંબ રેકોર્ડ્સ
+        વાઘેલા પરિવારના કુંટુંબની વિગતોના રેકોર્ડ્સ
       </h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {records.map((record) => (
